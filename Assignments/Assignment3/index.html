@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Restaurant</title>
+</head>
+
+<body>
+    <h1>Fastfood</h1>
+
+    <section id="form-menu">
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Hauptspeisen</h3>
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item">
+                Cheseburger
+            </div>
+            <div class="grid-item">
+                5,00 &euro;
+            </div>
+            <div class="grid-item">
+                <input type="number" id="cheesebuger-quantity" name="cheesebuger-quantity" value="0" min="0">
+            </div>
+
+            <div class="grid-item">
+                <h3>Beilagen</h3>
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+
+            <div class="grid-item">
+                <label for="salad">
+                    <input type="radio" name="sides" id="salad" value="salad" onclick="handleInputSides()">Salat
+                </label>
+            </div>
+            <div class="grid-item">
+                2,00 &euro;
+            </div>
+            <div class="grid-item">
+                <input type="number" id="salad-quantity" name="salad-quantity" value="0" min="0" disabled="true">
+            </div>
+
+            <div class="grid-item">
+                <label for="fries">
+                    <input type="radio" name="sides" id="fries" value="fries" onclick="handleInputSides()">Pommes
+                </label>
+            </div>
+            <div class="grid-item">
+                3,50 &euro;
+            </div>
+            <div class="grid-item">
+                <input type="number" id="fries-quantity" name="fries-quantity" value="0" min="0" disabled="true">
+            </div>
+
+            <div class="grid-item">
+                <label for="no-sides">
+                    <input type="radio" name="sides" id="no-sides" value="no-sides" checked="checked"
+                        onclick="handleInputSides()">keine Beilage
+                </label>
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+
+            <div class="grid-item">
+                <h3>Getränke</h3>
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item">
+                Cola
+            </div>
+            <div class="grid-item">
+                3,00 &euro;
+            </div>
+            <div class="grid-item">
+                <input type="number" id="coke-quantity" name="coke-quantity" value="0" min="0">
+            </div>
+
+        </div>
+
+        <br>
+        <button onclick="output()">Bestellen</button>
+    </section>
+
+    <div class="order-details">
+        <h2>Ihre Bestellung</h2>
+        <div id="output-area"></div>
+    </div>
+
+
+    <script src="js/process-order.js"></script>
+</body>
+
+</html>
