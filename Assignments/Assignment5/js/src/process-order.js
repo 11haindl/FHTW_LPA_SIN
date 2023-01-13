@@ -107,5 +107,5 @@ class processOrder {
     let table = this.buildOutputTable();
     let output = document.getElementById("output-area");
     output.innerHTML = table;
-  }
+  } 
 }
