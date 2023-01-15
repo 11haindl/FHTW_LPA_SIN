@@ -1,5 +1,5 @@
-let displayMenu = new showMenu();
-displayMenu.buildMenuToDisplay();
+let menu = new displayMenu();
+menu.buildMenuToDisplay();
 
 let outputButton = new processOrder();
 function output(){

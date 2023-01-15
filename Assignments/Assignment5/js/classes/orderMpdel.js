@@ -1,4 +1,4 @@
-class Order{
+class orderModel{
     
     constructor(){
         this.orderProducts = [];

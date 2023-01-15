@@ -1,7 +1,7 @@
-class showMenu{
+class displayMenu{
 
     constructor(){
-        this.menu = new Menu();
+        this.menu = new menuModel();
         this.emptyGridItem = '<div class="grid-item"></div>';
     }
 
@@ -10,19 +10,34 @@ class showMenu{
         if(product.category == CATEGORIES.SIDE_DISH){
             result = 
             '<label for="side-dish'+ product.id +'">' +
-                '<input type="radio" class="sides" name="sides" id="side-'+ product.id +'" value="side-dish'+ product.id +'">' 
+                '<input type="radio" class="sides" name="sides" id="side-'+ product.id +'" value="' + product.id +'">' 
                 + product.name +
             '</label>';
 
             window.onload = function(){
-                let sides = document.getElementsByName("sides");
-                for(let sideDish of sides){
-                    let sideDishId = sideDish.getAttribute("id");
-                    let inputId = "quantity-" + sideDishId.slice(5, sideDishId.length);
-                    console.log(inputId);
-                    document.getElementById(inputId).disabled = true;
-                    sideDish.onclick = function(){
-                        document.getElementById(inputId).disabled = false;
+                let sidesRadioGroup = document.getElementsByName("sides");
+                let sidesInputFields = [];
+                for(let sideDishButton of sidesRadioGroup){
+                    let sideDishButtonId = sideDishButton.getAttribute("id");
+                    let sideDishInputId = "quantity-" + sideDishButtonId.slice(5, sideDishButtonId.length);
+                    let sideDishInputField = document.getElementById(sideDishInputId);
+                    sideDishInputField.value = 0;
+                    sideDishInputField.disabled = true;
+                    sidesInputFields.push(sideDishInputField);
+                }
+                
+                for(let sideDishButton of sidesRadioGroup){
+                    sideDishButton.onclick = function(){
+                        let checkedSideDish = document.querySelector('input[name="sides"]:checked').value;
+                        for(let sideDishInputField of sidesInputFields){
+                            if(sideDishInputField.name == "quantity-" + checkedSideDish){
+                                sideDishInputField.value = 1;
+                                sideDishInputField.disabled = false;
+                            } else {
+                                sideDishInputField.value = 0;
+                                sideDishInputField.disabled = true;
+                            }
+                        }
                     }
                 }
             }
@@ -41,7 +56,7 @@ class showMenu{
                 this.buildRadioForSides(product) +
             '</div>' +
             '<div class="grid-item">' + 
-                product.price + ' &euro;' +
+                parseFloat(product.price).toFixed(2) + ' &euro;' +
             '</div>' +
             '<div class="grid-item">' +
                 '<input type="number" id="quantity-' + product.id + '" name="quantity-' + product.id + '" value="0" min="0">' +

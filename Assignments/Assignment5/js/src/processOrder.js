@@ -1,13 +1,13 @@
 class processOrder {
   initOrder() {
     let quantities = Array.from(document.querySelectorAll('[type="number"]'));
-    let menu = new Menu();
-    let order = new Order();
+    let menu = new menuModel();
+    let order = new orderModel();
     for (let quantity of quantities) {
       for(let product of menu.products){
         if(("quantity-" + product.id) == quantity.getAttribute("id")){
-          let orderProduct = new OrderProduct(product, quantity.value);
-          order.addOrderProduct(orderProduct);
+          let orderProd = new orderProductModel(product, quantity.value);
+          order.addOrderProduct(orderProd);
         }
       }
     }

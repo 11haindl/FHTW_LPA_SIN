@@ -1,4 +1,4 @@
-class Product{
+class productModel{
             
     constructor(id, name, price, category){
         this.setId(id);

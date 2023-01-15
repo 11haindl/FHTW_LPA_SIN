@@ -1,4 +1,4 @@
-class OrderProduct{
+class orderProductModel{
 
     constructor(product, quanitiy){
         this.setProduct(product);
