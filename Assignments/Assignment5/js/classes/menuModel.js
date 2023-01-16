@@ -1,5 +1,8 @@
 class menuModel{
-    // constructor for creating new menuModel object
+    /* 
+    constructor for creating new menuModel object,
+    which has a list of products, getting filled with method initMenu()
+    */
     constructor(){
         this.products = [];
         this.initMenu();

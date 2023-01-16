@@ -1,7 +1,9 @@
+// entry point for displaying menu
 let menu = new displayMenu();
-menu.buildMenuToDisplay();
+menu.displayOutput();
 
-let outputButton = new processOrder();
+// entry point for processing order
 function order(){
-    outputButton.output();
+    let startProcess = new processOrder();
+    startProcess.output();
 }
