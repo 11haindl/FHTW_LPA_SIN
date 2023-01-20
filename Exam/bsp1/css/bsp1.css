@@ -1,0 +1,45 @@
+body{
+    margin: 0px;
+    padding: 0px;
+
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#form-bsp1-wrapper{
+
+    border: 2px solid #888;
+    border-radius: 4px;
+
+    padding: 16px;
+    width: 400px;
+}
+
+input{
+    border-color: brown;
+}
+
+#form-bsp1-wrapper input[type=number],
+#form-bsp1-wrapper input[type=text],
+#form-bsp1-wrapper select,
+#form-bsp1-wrapper textarea,
+#form-bsp1-wrapper div.group label {
+
+    border: 2px solid lightblue;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
+    line-height: 20px;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    width: 100%;
+
+}

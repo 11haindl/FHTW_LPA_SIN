@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/bsp1.css">
+    <link rel="stylesheet" href="./css/changes.css">
+    <title>Passnachbestellung</title>
+</head>
+
+<body>
+    <div id="form-bsp1-wrapper">
+        <form>
+            <div>
+                <label for="firstname">Vorname: </label>
+                <input type="text" name="firstname" id="firstname" placeholder="Vorname">
+            </div>
+            <div>
+                <label for="lastname">Nachname: </label>
+                <input type="text" name="lastname" id="lastname" placeholder="Nachname">
+            </div>
+            <div class="group">
+                Geschlecht: <br>
+                <label for="gender-female">
+                    <input type="radio" name="sex" id="gender-female" value="femaile">Weiblich
+                </label>
+                <br>
+                <label for="gender-male">
+                    <input type="radio" name="sex" id="gender-male" value="male">Männlich
+                </label>
+                <br>
+                <label for="divers">
+                    <input type="radio" name="sex" id="gender-divers" value="divers">Divers
+                </label>
+                <br>
+                <label for="other">
+                    <input type="radio" name="sex" id="gender-other" value="other">keine Angabe
+                </label>
+            </div>
+            <div>
+                <label for="birth-date">Geburtsdatum: </label>
+                <input type="date" name="birth-date" id="birth-date" placeholder="Geburtsdatum">
+            </div>
+
+            <div>
+                <label for="passport">Passnummer: </label>
+                <input type="text" name="passport" id="passport" maxlength="8">
+            </div>
+
+            <div>
+                <label for="reason">Grund für Nachbestellung:</label><br>
+                <select name="reason" id="reason">
+                    <option value="expired">Abgelaufen</option>
+                    <option value="loss">Verlust</option>
+                    <option value="birth">Geburt</option>
+                    <option value="marriage">Heirat</option>
+                </select>
+            </div>
+
+            <input type="submit" id="submit-form" value="Formular Absenden">
+        </form>
+    </div>
+
+    <script type="text/javascript" src="js/bsp1.js"></script>
+</body>
+
+</html>
